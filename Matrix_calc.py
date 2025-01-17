@@ -131,13 +131,12 @@ root.title("Матрицы")
 root.resizable(width=False, height=False)
 
 # Проверка наличия иконки
-icon_path = "icon/icon.ico"
+icon_path = os.path.abspath("icon.ico")
 if os.path.exists(icon_path):
     root.iconbitmap(icon_path)
 else:
     messagebox.showwarning("Предупреждение",
                            f"Предупреждение: Файл иконки '{icon_path}' не найден. Приложение будет запущено без иконки.")
-
 # Поля для ввода размеров матрицы
 tk.Label(root, text="Количество строк:").grid(row=0, column=0, padx=10, pady=10)
 rows_entry = tk.Entry(root, width=5)
